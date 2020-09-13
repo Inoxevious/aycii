@@ -1,0 +1,213 @@
+{% extends 'pages/base.html' %}
+<p></p>
+{% load static %}
+<p></p>
+{% load easy_maps_tags %}
+<p></p>
+{% block content %}
+<!-- Breadcrumbs -->
+{% if notice %}
+<p></p>
+<section class="g-bg-gray-light-v5 g-py-50">
+  <div class="container">
+    <div class="d-sm-flex text-center">
+      <div class="align-self-center">
+        <h2 class="h3 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+          {{notice.title}}
+        </h2>
+      </div>
+
+      <div class="align-self-center ml-auto">
+        <ul class="u-list-inline">
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-main g-color-primary--hover" href="#"
+              >{{notice.dep.name}}</a
+            >
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>
+          <li class="list-inline-item g-mr-5">
+            <a class="u-link-v5 g-color-main g-color-primary--hover" href="#"
+              >notices</a
+            >
+            <i class="g-color-gray-light-v2 g-ml-5">/</i>
+          </li>
+          <li class="list-inline-item g-color-primary">
+            <span>{{notice.published_date}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- Portfolio Single Item -->
+<section class="container g-py-100">
+  <!-- Carousel Images -->
+  <div
+    class="js-carousel g-mb-50"
+    data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-30 g-height-15 g-font-size-default g-color-gray-dark-v5 g-bg-white g-color-white--hover g-bg-primary--hover rounded"
+    data-arrow-left-classes="fa fa-angle-left g-left-20"
+    data-arrow-right-classes="fa fa-angle-right g-right-20"
+  >
+    <img class="img-fluid" src="{{notice.image.url}}" alt="Image Description" />
+  </div>
+  <!-- End Carousel Images -->
+
+  <div class="row g-mb-70">
+    <div class="col-md-8 g-mb-30">
+      <div class="mb-5">
+        <h2 class="g-color-black mb-1">{{notice.dep.name}}</h2>
+        <span class="d-block lead mb-4">{{notice.title}}</span>
+        <p>{{notice.statement}}</p>
+        <p></p>
+      </div>
+
+      <a
+        class="btn btn-md u-btn-primary g-font-size-default g-rounded-25 g-px-30 g-py-12"
+        href="#"
+        >Confirm read</a
+      >
+    </div>
+
+    <div class="col-md-4 g-mb-30">
+      <!-- Client -->
+      <div class="mb-5">
+        <h3 class="h5 g-color-black mb-3">Author:</h3>
+        <a class="g-color-gray-dark-v4 g-text-underline--none--hover" href="#">
+          <img
+            class="g-width-25 g-height-25 rounded-circle mr-2 mb-1"
+            src="{{notice.dep.head.profile_pic.url}}"
+            alt="Image Description"
+          />{{notice.dep.head.user.last_name}}
+        </a>
+      </div>
+      <!-- End Client -->
+
+      <!-- Designers -->
+      <!-- <div class="mb-5">
+        <h3 class="h5 g-color-black mb-3">Designers:</h3>
+        <ul class="list-unstyled">
+          <li class="my-3">
+            <img
+              class="g-width-25 g-height-25 rounded-circle mb-1 mr-2"
+              src="../../assets/img-temp/100x100/img7.jpg"
+              alt="Image Description"
+            />
+            <a
+              class="g-color-gray-dark-v4 g-text-underline--none--hover"
+              href="#"
+              >Alex Teseira</a
+            >
+          </li>
+        </ul>
+      </div> -->
+      <!-- End Designers -->
+
+      <!-- Tags -->
+      <!-- <div class="g-mb-30">
+        <h3 class="h5 g-color-black mb-3">Tags:</h3>
+        <ul class="u-list-inline mb-0">
+          <li class="list-inline-item g-mb-10">
+            <a
+              class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover g-rounded-50 g-py-4 g-px-15"
+              href="#"
+              >Design</a
+            >
+          </li>
+          <li class="list-inline-item g-mb-10">
+            <a
+              class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover g-rounded-50 g-py-4 g-px-15"
+              href="#"
+              >Art</a
+            >
+          </li>
+          <li class="list-inline-item g-mb-10">
+            <a
+              class="u-tags-v1 g-color-main g-brd-around g-brd-gray-light-v3 g-bg-gray-dark-v2--hover g-brd-gray-dark-v2--hover g-color-white--hover g-rounded-50 g-py-4 g-px-15"
+              href="#"
+              >Graphic</a
+            >
+          </li>
+        </ul>
+      </div> -->
+      <!-- End Tags -->
+
+      <!-- Share -->
+      <div class="mb-3">
+        <h3 class="h5 g-color-black mb-3">Share:</h3>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item mr-1 mb-1">
+            <a class="btn u-btn-outline-facebook g-rounded-25" href="#">
+              <i class="mr-1 fa fa-facebook"></i>
+              Facebook
+            </a>
+          </li>
+          <li class="list-inline-item mx-1 mb-1">
+            <a class="btn u-btn-outline-twitter g-rounded-25" href="#">
+              <i class="mr-1 fa fa-twitter"></i>
+              Twitter
+            </a>
+          </li>
+          <li class="list-inline-item mx-1 mb-1">
+            <a class="btn u-btn-outline-dribbble g-rounded-25" href="#">
+              <i class="mr-1 fa fa-dribbble"></i>
+              Dribbble
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Share -->
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav class="text-center" aria-label="Page Navigation">
+    <ul class="list-inline mb-0">
+      <li class="list-inline-item float-sm-left">
+        <a
+          class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16"
+          href="#"
+          aria-label="Previous"
+        >
+          <span aria-hidden="true">
+            <i class="fa fa-angle-left"></i>
+            Previous
+          </span>
+        </a>
+      </li>
+      <li class="list-inline-item mr-0">
+        <a
+          class="u-pagination-v1__item g-color-gray-dark-v4 g-font-size-20 g-py-2 g-px-10"
+          href="#"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="View All"
+        >
+          <i class="icon-grid"></i>
+        </a>
+      </li>
+      <li class="list-inline-item float-sm-right">
+        <a
+          class="u-pagination-v1__item u-pagination-v1-4 g-brd-gray-light-v3 g-brd-primary--hover g-rounded-50 g-pa-7-16"
+          href="#"
+          aria-label="Next"
+        >
+          <span aria-hidden="true">
+            Next
+            <i class="fa fa-angle-right"></i>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End Pagination -->
+</section>
+<!-- End Portfolio Single Item -->
+
+<p></p>
+{% else %}
+<p>No Recommendation</p>
+{% endif %}
+<p></p>
+{% endblock %}

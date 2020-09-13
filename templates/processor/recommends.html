@@ -1,0 +1,68 @@
+{% extends 'processor/base.html' %}
+
+{% block content %}
+<div class="js-custom-scroll g-height-400 g-pa-15 g-pa-0-30-25--md">
+  
+  <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"> Product : {{products}}</h3>
+  <h5 class=" g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none"> Today's Market Price
+    <span class="d-inline-block text-center g-min-width-35 g-bg-primary g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">{{total_farmers}}</span>
+  </span>
+  </h5>
+  
+<hr width="75%"> 
+  <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">
+    <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+    </span>
+              <span class="media-body align-self-center">Recommended Farmers</i></span>
+              <span class="d-flex align-self-center">
+      <span class="d-inline-block text-center g-min-width-35 g-bg-primary g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">{{total_farmers}}</span>
+              </span>
+  </h3>
+    <table class="table table-responsive-sm w-100">
+      <thead>
+        <tr>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none g-pl-20">ID</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">IMAGE</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">NAME</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">INTRO</th>
+          <th class="text-center text-right g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">TECH CAPACITY</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">CAPITAL REQUIRED</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">PROFITABILITY/YEAR1</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Market Analysis</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">REQUEST</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for pd in business %}
+        <tr>
+          <td style="margin-top: -520px;" class=" g-font-size-default g-color-black g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">
+            {{pd.id}}
+        </td>
+          <td class=" g-font-size-default g-color-black  g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">
+              <img style="height: 60px; width: 60px;" src="{{pd.image.url}}">
+          </td>
+          <td class="text-center g-font-size-default g-color-black g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{pd.name}}</td>
+          <td style="margin-top: -10px;" class="g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10"> {{ pd.intro}}</td>
+          <td class=" g-font-size-default g-color-black g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{pd.production_capacity_technology_process}}</td>
+          {% for sums in sums %}
+          <td class=" g-font-size-default g-color-black  g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{sums}}</td>
+          {% endfor %}
+          <td class="text-center g-font-size-default g-color-black g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+            <span class="u-tags-v1 text-center g-width-100 g-brd-around g-brd-lightblue-v3 g-bg-lightblue-v3 g-font-size-default g-color-white g-rounded-50 g-py-4 g-px-15">approved</span>
+          </td>
+              
+       
+          <td class="g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{pd.farm_produce}}</td>
+          <td class="g-font-size-default g-color-black g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+            <span class="u-tags-v1 text-center g-width-100 g-brd-around g-brd-lightred-v3 g-bg-lightred-v3 g-font-size-default g-color-white g-rounded-50 g-py-4 g-px-15">Pending</span>
+          </td>
+        </tr>
+        {% endfor %}
+
+       
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

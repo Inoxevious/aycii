@@ -1,0 +1,255 @@
+<!-- Promo Block -->
+<div
+  class="g-bg-cover g-bg-pos-top-center g-bg-img-hero g-bg-cover g-bg-black-opacity-0_3--after g-py-100"
+  style="background-image: url(assets/img-temp/1920x1080/img1.jpg)"
+>
+  <div class="container g-pos-rel g-z-index-1">
+    <div class="g-bg-white g-pa-30">
+      <!-- Input Group -->
+      <form action="{% url 'search:search' %}" method="GET">
+        <div class="row g-mx-0--md">
+          <div class="col-md-6 col-lg-8 g-px-0--md g-mb-30">
+            <input
+              name="q"
+              class="form-control rounded-0 g-brd-gray-light-v3 g-px-20 g-py-15"
+              type="text"
+              placeholder="Search by location or fuel type"
+            />
+          </div>
+
+          <!-- Button Group -->
+          <div class="col-sm-6 col-md-3 col-lg-2 g-px-0--md g-mb-30">
+            <select
+              class="js-custom-select w-100 h-100 u-select-v1 g-min-width-150 g-brd-left-none--md g-brd-gray-light-v3 g-color-main g-color-primary--hover g-pt-12 g-pb-13"
+              required
+              data-placeholder="All Cities"
+              data-open-icon="fa fa-angle-down"
+              data-close-icon="fa fa-angle-up"
+            >
+              <option></option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="NY"
+              >
+                Gweru
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="VC"
+              >
+                Mutare
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="LN"
+              >
+                Gokwe
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="BR"
+              >
+                Bowera
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="ML"
+              >
+                Masvingo
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="PR"
+              >
+                Chinhoyi
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="MS"
+              >
+                Kadoma
+              </option>
+            </select>
+          </div>
+          <!-- End Button Group -->
+
+          <!-- Button Group -->
+          <div class="col-sm-6 col-md-3 col-lg-2 g-px-0--md g-mb-30">
+            <select
+              class="js-custom-select w-100 h-100 u-select-v1 g-min-width-150 g-brd-left-none--md g-brd-gray-light-v3 g-color-main g-color-primary--hover g-pt-12 g-pb-13"
+              required
+              data-placeholder="All Provinces"
+              data-open-icon="fa fa-angle-down"
+              data-close-icon="fa fa-angle-up"
+            >
+              <option></option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="NR"
+              >
+                Midlands
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="NTE"
+              >
+                Harare
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="NTW"
+              >
+                Matebeleland
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="EA"
+              >
+                Manicaland
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="SO"
+              >
+                Mashonaland
+              </option>
+              <option
+                class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                value="SOE"
+              >
+                Masvingo
+              </option>
+            </select>
+          </div>
+          <!-- End Button Group -->
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-lg-3 g-mb-30">
+            <!-- Button Group -->
+            <div class="input-group-btn">
+              <select
+                class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12"
+                required
+                data-placeholder="Petrol Type"
+                data-open-icon="fa fa-angle-down"
+                data-close-icon="fa fa-angle-up"
+              >
+                <option></option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="FR"
+                >
+                  EP 95
+                </option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="FS"
+                >
+                  EP 94
+                </option>
+              </select>
+            </div>
+            <!-- End Button Group -->
+          </div>
+
+          <div class="col-6 col-lg-3 g-mb-30">
+            <!-- Button Group -->
+            <div class="input-group-btn">
+              <select
+                class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12"
+                required
+                data-placeholder="Diesel Type"
+                data-open-icon="fa fa-angle-down"
+                data-close-icon="fa fa-angle-up"
+              >
+                <option></option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="AP"
+                >
+                  Crude
+                </option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="CO"
+                >
+                  Refined
+                </option>
+              </select>
+            </div>
+            <!-- End Button Group -->
+          </div>
+
+          <div class="col-6 col-lg-3 g-mb-30">
+            <!-- Button Group -->
+            <div class="input-group-btn">
+              <select
+                class="js-custom-select u-select-v1 w-100 g-brd-gray-light-v3 g-color-main g-color-primary--hover g-py-12"
+                required
+                data-placeholder="Home Fuels"
+                data-open-icon="fa fa-angle-down"
+                data-close-icon="fa fa-angle-up"
+              >
+                <option></option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="1"
+                >
+                  LP Gas
+                </option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="2"
+                >
+                  Paraffin
+                </option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="3"
+                >
+                  Ethanol
+                </option>
+                <option
+                  class="g-brd-none g-color-main g-color-white--hover g-color-white--active g-bg-primary--hover g-bg-primary--active"
+                  value="4"
+                >
+                  Brickets
+                </option>
+              </select>
+            </div>
+            <!-- End Button Group -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-6 g-mb-30">
+            <h2 class="h6 g-font-weight-600 mb-4">
+              Liters ltrs(<span id="rangeSliderAmount3">0</span>)
+            </h2>
+            <div
+              id="rangeSlider1"
+              class="u-slider-v1-3"
+              data-result-container="rangeSliderAmount3"
+              data-range="true"
+              data-default="1, 1000"
+              data-min="0"
+              data-max="1000"
+            ></div>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button
+            class="btn btn-block u-btn-primary g-color-white g-bg-primary-dark-v1--hover g-font-weight-600 rounded-0 g-px-18 g-py-15"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+      <!-- End Input Group -->
+    </div>
+  </div>
+</div>
+<!-- End Promo Block -->

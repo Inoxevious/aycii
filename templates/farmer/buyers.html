@@ -1,0 +1,53 @@
+{% extends 'farmer/dashboard_base.html' %}
+
+{% block content %}
+<div class="js-custom-scroll g-height-400 g-pa-15 g-pa-0-30-25--md">
+  
+  <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0"> Your Primary Produce: {{farm_produce}}</h3>
+<hr width="75%"> 
+  <h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">
+    <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+    </span>
+              <span class="media-body align-self-center">Recommended Buyers</i></span>
+              <span class="d-flex align-self-center">
+      <span class="d-inline-block text-center g-min-width-35 g-bg-primary g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">{{total_buyers}}</span>
+              </span>
+  </h3>
+    <table class="table table-responsive-sm w-100">
+      <thead>
+        <tr>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none g-pl-20">#</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Company Name</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Location</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Inputs Required (tonnes)</th>
+          <th class="text-center text-right g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Buying Price/tonne</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Status</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">End Products</th>
+          <th class="text-center g-font-weight-300 g-color-gray-dark-v6 g-brd-top-none">Connect</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+          {% for pd in prddata %}
+        <tr>
+          <td class="text-center g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10 g-pl-20">1</td>
+          <td class="text-center g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{pd.manufacturingcompany}}</td>
+          <td class="text-center g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10"> {{ pd.manufacturingcompany.address}}</td>
+          <td class="text-center g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">40</td>
+          <td class="text-center g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">$ {{pd.manufacturingcompany.production_output}}</td>
+          <td class="text-center g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+            <span class="u-tags-v1 text-center g-width-100 g-brd-around g-brd-lightblue-v3 g-bg-lightblue-v3 g-font-size-default g-color-white g-rounded-50 g-py-4 g-px-15">approved</span>
+          </td>
+          <td class="g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">{{pd.manufacturingcompany.products}}</td>
+          <td class="g-font-size-default g-color-black g-valign-middle g-brd-top-none g-brd-bottom g-brd-2 g-brd-gray-light-v4 g-py-10">
+            <span class="u-tags-v1 text-center g-width-100 g-brd-around g-brd-lightred-v3 g-bg-lightred-v3 g-font-size-default g-color-white g-rounded-50 g-py-4 g-px-15">Pending</span>
+          </td>
+        </tr>
+        {% endfor %}
+
+       
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

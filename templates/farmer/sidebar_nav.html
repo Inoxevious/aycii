@@ -1,0 +1,281 @@
+<section class="container-fluid px-0 g-pt-65">
+  <div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+    <!-- Sidebar Nav -->
+    <div
+      id="sideNav"
+      class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--dark"
+    >
+      <ul
+        id="sideNavMenu"
+        class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0"
+      >
+        <!-- Home -->
+        <li
+          class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item"
+        >
+          <a
+            class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12"
+            href="{% url 'individual:home' %}"
+          >
+            <span
+              class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"
+            >
+              <i class="hs-admin-home"></i>
+            </span>
+            <span class="media-body align-self-center">Home</span>
+            <span class="d-flex align-self-center u-side-nav--control-icon">
+            </span>
+            <span class="u-side-nav--has-sub-menu__indicator"></span>
+          </a>
+        </li>
+        <!-- End Home -->
+
+        <!-- Recommendations -->
+        <li
+          class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item"
+        >
+          <a
+            class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12"
+            href="#"
+            data-hssm-target="#subMenu2"
+          >
+            <span
+              class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"
+            >
+              <i class="hs-admin-medall"></i>
+            </span>
+            <span class="media-body align-self-center">Recommendations</span>
+            <span class="d-flex align-self-center u-side-nav--control-icon">
+              <i class="hs-admin-angle-right"></i>
+            </span>
+            <span class="u-side-nav--has-sub-menu__indicator"></span>
+          </a>
+
+          <!-- Recommendations: Submenu-1 -->
+          <ul
+            id="subMenu2"
+            class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0"
+          >
+            <!-- Fixed Header & Sidebar -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-layout-media-center-alt"></i>
+                </span>
+                <span class="media-body align-self-center">Buyers</span>
+              </a>
+            </li>
+            <!-- End Fixed Header & Sidebar -->
+
+            <!-- Fixed Header & Static Sidebar -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-layout-media-center-alt"></i>
+                </span>
+                <span class="media-body align-self-center">Investors</span>
+              </a>
+            </li>
+            <!-- End Fixed Header & Static Sidebar -->
+
+            <!-- Static Header & Sidebar -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-layout-media-center-alt"></i>
+                </span>
+                <span class="media-body align-self-center">Market</span>
+              </a>
+            </li>
+            <!-- End Static Header & Sidebar -->
+
+            <!-- Hide Sidebar -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-layout-media-center-alt"></i>
+                </span>
+                <span class="media-body align-self-center"
+                  >Portfolio Management</span
+                >
+              </a>
+            </li>
+            <!-- End Hide Sidebar -->
+          </ul>
+          <!-- End Recommendations: Submenu-1 -->
+        </li>
+        <!-- End Recommendations -->
+
+        <!-- Settings -->
+        <li
+          class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-opened has-active"
+        >
+          <a
+            class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12"
+            href="#"
+            data-hssm-target="#subMenu4"
+          >
+            <span
+              class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18"
+            >
+              <i class="hs-admin-settings"></i>
+            </span>
+            <span class="media-body align-self-center">Settings</span>
+            <span class="d-flex align-self-center u-side-nav--control-icon">
+              <i class="hs-admin-angle-right"></i>
+            </span>
+
+            <span class="u-side-nav--has-sub-menu__indicator"></span>
+          </a>
+
+          <!-- Settings: Submenu-1 -->
+          <ul
+            id="subMenu4"
+            class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0"
+            style="display: block"
+          >
+            <!-- Profile Pages -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="#"
+                data-hssm-target="#subMenu4Profiles"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-list"></i>
+                </span>
+                <span class="media-body align-self-center">Profile</span>
+                <span class="d-flex align-self-center u-side-nav--control-icon">
+                  <i class="hs-admin-angle-right"></i>
+                </span>
+              </a>
+
+              <!-- Menu Leveles: Submenu-2 -->
+              <ul
+                id="subMenu4Profiles"
+                class="u-side-nav--third-level-menu"
+                style="display: block"
+              >
+                <!-- Main -->
+                <li class="u-side-nav--third-level-menu-item">
+                  <a
+                    class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6"
+                    href="{% url 'individual:profile_info' %}"
+                    >Profile Information</a
+                  >
+                </li>
+                <!-- End Main -->
+                <!-- Business -->
+                <li class="u-side-nav--third-level-menu-item">
+                  <a
+                    class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6"
+                    href="{% url 'individual:home' %}"
+                    >Business Profile Information</a
+                  >
+                </li>
+                <!-- End Business -->
+              </ul>
+              <!-- End Menu Leveles: Submenu-2 -->
+            </li>
+            <!-- End Profile Pages -->
+
+            <!-- Projects -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-layout-media-left"></i>
+                </span>
+                <span class="media-body align-self-center">Projects</span>
+              </a>
+            </li>
+            <!-- End Projects -->
+
+            <!-- Chat -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-comments"></i>
+                </span>
+                <span class="media-body align-self-center">Chat</span>
+              </a>
+            </li>
+            <!-- End Chat -->
+
+            <!-- File Manager -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-folder"></i>
+                </span>
+                <span class="media-body align-self-center">File Manager</span>
+                <span class="d-flex align-self-center">
+                  <span
+                    class="d-inline-block text-center g-min-width-35 g-bg-primary g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"
+                    >10</span
+                  >
+                </span>
+              </a>
+            </li>
+            <!-- End File Manager -->
+
+            <!-- User Contacts -->
+            <li
+              class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item"
+            >
+              <a
+                class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
+                href="{% url 'individual:home' %}"
+              >
+                <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+                  <i class="hs-admin-id-badge"></i>
+                </span>
+                <span class="media-body align-self-center">User Contacts</span>
+              </a>
+            </li>
+            <!-- End User Contacts -->
+          </ul>
+          <!-- End Settings: Submenu-1 -->
+        </li>
+        <!-- End Settings -->
+      </ul>
+    </div>
+    <!-- End Sidebar Nav -->
+  </div>
+</section>

@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nvd3.css' %}">
+   
+    <script src="{%  static 'js/d3.js'  %}" ></script>
+    <script src="{%  static 'js/nv.d3.min.js'  %}" ></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #chart svg {
+            height: 375px;
+            width: 50%;
+            }
+       
+        #chart1 svg {
+            height: 400px;
+            width: 50%;
+            }
+        #chart2 svg {
+            height: 400px;
+            width: 100%;
+            }
+       
+          </style>
+</head>
+<body>
+
+    <div id="chart">
+        <h2>Pie Chart</h2>
+        <svg></svg>
+    </div>
+
+    <div id="chart1">
+        <h2>Bar Chart</h2>
+        <svg></svg>
+    </div>
+    <div id="chart2">
+        <svg></svg>
+    </div>
+ 
+    <script>
+        // chart1 bar graph
+        var data1 =
+ [
+   {
+     "key": "Avg Interst",
+     "values": [
+       {
+         "x": 1,
+         "y": 9
+       },
+       {
+         "x": 2,
+         "y": 13
+       },
+       {
+         "x": 3,
+         "y": 15
+       },
+        {
+         "x": 4,
+         "y": 17
+       },
+       {
+         "x": 5,
+         "y": 20
+       }
+     ]
+   }
+ ];
+ 
+ nv.addGraph(function() {
+     var chart = nv.models.multiBarChart()
+       .duration(350)
+       .reduceXTicks(false)   //If 'false', every single x-axis tick label will be rendered.
+       .rotateLabels(0)      //Angle to rotate x-axis labels.
+       .showControls(false)   //Allow user to switch between 'Grouped' and 'Stacked' mode.
+       .groupSpacing(0.1)    //Distance between each group of bars.
+     ;
+ 
+     chart.xAxis
+         .tickFormat(d3.format(',f'));
+ 
+     chart.yAxis
+         .tickFormat(d3.format(',.1f'));
+ 
+     d3.select('#chart1 svg')
+         .datum(data1)
+         .call(chart);
+ 
+     nv.utils.windowResize(chart.update);
+ 
+     return chart;
+ });
+ </script>
+    <script>
+    var data = [
+        {
+                "label": "Grade A",
+                "value" : 210
+        },
+        {
+                "label": "Grade B",
+                "value" : 155
+        },
+        {
+                "label": "Grade C",
+                "value" : 167
+        },
+        {
+                "label": "Grade D",
+                "value" : 214
+        },
+        {
+                "label": "Grade E",
+                "value" : 125
+        }
+
+    ];
+
+    nv.addGraph(function() {
+        var chart = nv.models.pieChart()
+            .x(function(d) {return d.label})
+            .y(function(d) {return d.value})
+            .showLabels(true);
+
+        d3.select("#chart svg")
+            .datum(data)
+            .transition().duration(350)
+            .call(chart)
+        return chart;
+    })
+    </script>
+
+    
+<script>
+    //chart 3 scatter plot
+    // register our custom symbols to nvd3
+    // make sure your path is valid given any size because size scales if the chart scales.
+    nv.utils.symbolMap.set('thin-x', function(size) {
+        size = Math.sqrt(size);
+        return 'M' + (-size/2) + ',' + (-size/2) +
+                'l' + size + ',' + size +
+                'm0,' + -(size) +
+                'l' + (-size) + ',' + size;
+    });
+    // create the chart
+    var chart;
+    nv.addGraph(function() {
+        chart = nv.models.scatterChart()
+            .showDistX(true)
+            .showDistY(true)
+            .useVoronoi(true)
+            .color(d3.scale.category10().range())
+            .duration(300)
+        ;
+        chart.dispatch.on('renderEnd', function(){
+            console.log('render complete');
+        });
+        chart.xAxis.tickFormat(d3.format('.02f'));
+        chart.yAxis.tickFormat(d3.format('.02f'));
+        d3.select('#chart2 svg')
+            .datum(randomData(4,40))
+            .call(chart);
+        nv.utils.windowResize(chart.update);
+        chart.dispatch.on('stateChange', function(e) { ('New State:', JSON.stringify(e)); });
+        return chart;
+    });
+    function randomData(groups, points) { //# groups,# points per group
+        // smiley and thin-x are our custom symbols!
+        var data = [],
+            shapes = ['thin-x', 'circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
+            random = d3.random.normal();
+        for (i = 0; i < groups; i++) {
+            data.push({
+                key: 'Group ' + i,
+                values: []
+            });
+            for (j = 0; j < points; j++) {
+                data[i].values.push({
+                    x: random(),
+                    y: random(),
+                    size: Math.round(Math.random() * 100) / 100,
+                    shape: shapes[j % shapes.length]
+                });
+            }
+        }
+        return data;
+    }
+
+
+</script>
+</body>
+</html>

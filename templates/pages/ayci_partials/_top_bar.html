@@ -1,0 +1,126 @@
+{% load static %}
+<section>
+  <!-- Topbar -->
+  <div class="g-bg-white">
+    <div class="container-fluid g-py-15">
+      <div class="row align-items-center">
+        <div class="col-2 col-md-4 col-lg-2">
+          <!-- Logo -->
+          <a
+            class="navbar-brand d-flex align-items-center g-color-main text-uppercase g-text-underline--none--hover"
+            href="{% url 'pages:index'%}?next={{request.path}}"
+          >
+            <span
+              class="g-color-text g-font-size-35 g-line-height-0_7 g-opacity-1 mr-4"
+            >
+              <img
+                src="{% static 'assets/img/icons/ayci.png' %}"
+                style="
+                  height: 100px;
+                  display: block;
+                  position: absolute;
+                  left: 52px;
+                  height: 80px;
+                  width: 80px;
+                  top: 50%;
+                  -webkit-transform: translateY(-50%);
+                  -moz-transform: translateY(-50%);
+                  -ms-transform: translateY(-50%);
+                  -o-transform: translateY(-50%);
+                  transform: translateY(-50%);
+                "
+              />
+            </span>
+
+            <span
+              style="padding-left: 100px"
+              class="d-block g-hidden-sm-down g-font-weight-600 g-line-height-1_4"
+            >
+              Africa Youths Council
+              <span class="d-block g-color-text g-font-size-10 text-center"
+                >African Youths</span
+              >
+            </span>
+          </a>
+          <!-- End Logo -->
+        </div>
+
+        <div class="col-10 col-md-8 col-lg-6 ml-auto">
+          <!-- List -->
+          <ul class="list-inline float-right mb-0">
+            <!-- Guide -->
+            <li class="list-inline-item g-pos-rel g-mx-2">
+              <a
+                id="guide-dropdown-invoker-2"
+                class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover g-font-weight-500 g-font-size-12 g-pa-10"
+                href="{% url 'pages:guide'%}?next={{request.path}}"
+                aria-controls="guide-dropdown-2"
+                aria-haspopup="true"
+                aria-expanded="false"
+                data-dropdown-event="hover"
+                data-dropdown-target="#guide-dropdown-2"
+                data-dropdown-type="css-animation"
+                data-dropdown-duration="0"
+                data-dropdown-hide-on-scroll="true"
+                data-dropdown-animation-in="fadeIn"
+                data-dropdown-animation-out="fadeOut"
+              >
+                Guide
+              </a>
+            </li>
+            <!-- End Guide -->
+
+            <li class="list-inline-item g-hidden-xs-down g-mx-2">
+              <span class="g-color-gray-light-v1 g-pos-rel g-top-minus-1"
+                >|</span
+              >
+            </li>
+            <li class="list-inline-item g-hidden-xs-down g-mx-2">
+              <a
+                class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover g-font-weight-500 g-font-size-12 g-pa-10"
+                href="{% url 'pages:contact'%}?next={{request.path}}"
+              >
+                <i
+                  class="align-middle g-font-size-11 mr-1 icon-communication-033 u-line-icon-pro"
+                ></i>
+                Contacts
+              </a>
+            </li>
+            <li class="list-inline-item g-hidden-xs-down g-mx-2">
+              <span class="g-color-gray-light-v1 g-pos-rel g-top-minus-1"
+                >|</span
+              >
+            </li>
+            <li class="list-inline-item g-hidden-xs-down g-mx-2">
+              <a
+                class="u-link-v5 g-color-gray-dark-v5 g-color-primary--hover g-font-weight-500 g-font-size-12 g-pa-10"
+                href="#"
+              >
+                <i
+                  class="align-middle g-font-size-11 mr-1 icon-finance-206 u-line-icon-pro"
+                ></i>
+                Live Chat
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                class="u-link-v5 g-color-main g-color-white--hover g-bg-secondary g-bg-primary-dark-v1--hover g-font-weight-500 g-px-15 g-py-10"
+                href="{% url 'pages:register'%}?next={{request.path}}"
+                >Register</a
+              >
+            </li>
+            <li class="list-inline-item">
+              <a
+                class="u-link-v5 g-color-white g-bg-primary g-bg-primary-dark-v1--hover g-font-weight-500 g-px-15 g-py-10"
+                href="{% url 'pages:login'%}?next={{request.path}}"
+                >Login</a
+              >
+            </li>
+          </ul>
+          <!-- End List -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Topbar -->
+</section>

@@ -1,0 +1,119 @@
+<section>
+  <nav
+    class="js-mega-menu navbar navbar-expand-lg g-brd-y g-brd-2 g-brd-primary-dark-v1 g-bg-primary g-pa-0"
+  >
+    <div class="container-fluid">
+      <!-- Responsive Toggle Button -->
+      <button
+        class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="navBar"
+        data-toggle="collapse"
+        data-target="#navBar"
+      >
+        <span class="hamburger hamburger--slider g-px-0">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </span>
+      </button>
+      <!-- End Responsive Toggle Button -->
+
+      <div class="col-auto order-lg-1">
+        <!-- Search Form -->
+        <form
+          action="{% url 'search:search' %}"
+          method="GET"
+          id="searchform-1"
+          class="g-min-width-180--sm g-min-width-315--xl g-brd-right g-brd-primary-dark-v1 g-pos-rel"
+        >
+          <span class="g-color-white g-pos-abs g-top-15"
+            ><i class="fa fa-search"></i
+          ></span>
+          <input
+            name="q"
+            class="form-control w-100 g-brd-transparent g-color-white g-bg-transparent g-font-size-13 g-pl-25 g-py-18"
+            type="text"
+            placeholder="Search by location or fuel type"
+          />
+        </form>
+        <!-- End Search Form -->
+      </div>
+
+      <!-- Navigation -->
+      <div
+        id="navBar"
+        class="collapse navbar-collapse align-items-center order-lg-last g-brd-top g-brd-none--lg g-brd-primary-dark-v1"
+      >
+        <ul class="navbar-nav g-py-30 g-py-0--lg">
+          <li class="nav-item">
+            <a
+              class="nav-link g-color-white g-brd-x--lg g-brd-primary-dark-v1 g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-default g-px-17 g-px-23--xl g-py-15"
+              href="{% url 'pages:index'%}?next={{request.path}}"
+            >
+              Home
+            </a>
+          </li>
+
+          <!-- Agents - Submenu -->
+          <li class="nav-item hs-has-sub-menu">
+            <a
+              id="nav-link--page"
+              class="nav-link g-color-white g-brd-right--lg g-brd-primary-dark-v1 g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-default g-px-17 g-px-23--xl g-py-15"
+              href="#"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="nav-submenu--page"
+            >
+              Hotspot Listing
+            </a>
+
+            <!-- Submenu -->
+            <ul
+              id="nav-submenu--page"
+              class="hs-sub-menu list-unstyled u-shadow-v11 g-min-width-220 g-mt-2"
+              aria-labelledby="nav-link--page"
+            >
+              <li class="dropdown-item">
+                <a
+                  class="nav-link g-color-text g-font-weight-600"
+                  href="{% url 'pages:primary'%}?next={{request.path}"
+                  >Commercial Fuel</a
+                >
+              </li>
+              <li class="dropdown-item">
+                <a
+                  class="nav-link g-color-text g-font-weight-600"
+                  href="{% url 'pages:secondary'%}?next={{request.path}"
+                  >Non Commercial Fuel</a
+                >
+              </li>
+            </ul>
+            <!-- End Submenu -->
+          </li>
+          <!-- End Agents - Submenu -->
+
+          <li class="nav-item">
+            <a
+              class="nav-link g-color-white g-brd-right--lg g-brd-primary-dark-v1 g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-default g-px-17 g-px-23--xl g-py-15"
+              href="{% url 'pages:faq'%}?next={{request.path}"
+            >
+              Help
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link g-color-white g-brd-right--lg g-brd-primary-dark-v1 g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-default g-px-17 g-px-23--xl g-py-15"
+              href="{% url 'pages:contact'%}?next={{request.path}}"
+            >
+              Contacts
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Navigation -->
+    </div>
+  </nav>
+</section>
