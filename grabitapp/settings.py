@@ -25,11 +25,11 @@ MEDIA_URL = "/media/"
 STATIC_ROOT = APP_HOME + STATIC_URL_PREFIX + '/static/static/' 
 
 # AWS CREDENTIALS
-AWS_RDS_USERNAME='postgres'
-AWS_RDS_PASSWORD='nhumeapp123'
+AWS_RDS_USERNAME='aycii'
+AWS_RDS_PASSWORD='PublicAycii123'
 SOURVE='209.88.93.187/32'
-AWS_RDS_ENDPOINT= 'nhumeapp.c9bwramxwsbn.eu-west-2.rds.amazonaws.com'
-AWS_RDS_DBNAME='nhumeapp'
+AWS_RDS_ENDPOINT= 'aycii.c9bwramxwsbn.eu-west-2.rds.amazonaws.com'
+AWS_RDS_DBNAME='postgres'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -125,28 +125,28 @@ WSGI_APPLICATION = 'grabitapp.wsgi.application'
 #         }
 #     }
 
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
-#             'NAME': AWS_RDS_DBNAME,
-#             'USER': AWS_RDS_USERNAME,
-#             'PASSWORD': AWS_RDS_PASSWORD,
-#             'HOST': AWS_RDS_ENDPOINT,
-#             'PORT': POSTGRESQL_ADDON_PORT,
-#             'CONN_MAX_AGE': 15, 
-#         }
-#     }
 DATABASES = {
         'default': {
             'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
-            'NAME': 'effi',
-            'USER': 'postgres',
-            'PASSWORD': 'postgres',
-            'HOST': 'localhost',
+            'NAME': AWS_RDS_DBNAME,
+            'USER': AWS_RDS_USERNAME,
+            'PASSWORD': AWS_RDS_PASSWORD,
+            'HOST': AWS_RDS_ENDPOINT,
             'PORT': POSTGRESQL_ADDON_PORT,
             'CONN_MAX_AGE': 15, 
         }
     }
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
+#             'NAME': 'effi',
+#             'USER': 'postgres',
+#             'PASSWORD': 'postgres',
+#             'HOST': 'localhost',
+#             'PORT': POSTGRESQL_ADDON_PORT,
+#             'CONN_MAX_AGE': 15, 
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
