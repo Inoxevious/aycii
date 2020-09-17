@@ -125,28 +125,28 @@ WSGI_APPLICATION = 'grabitapp.wsgi.application'
 #         }
 #     }
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
-            'NAME': AWS_RDS_DBNAME,
-            'USER': AWS_RDS_USERNAME,
-            'PASSWORD': AWS_RDS_PASSWORD,
-            'HOST': AWS_RDS_ENDPOINT,
-            'PORT': POSTGRESQL_ADDON_PORT,
-            'CONN_MAX_AGE': 15, 
-        }
-    }
 # DATABASES = {
 #         'default': {
 #             'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
-#             'NAME': 'effi',
-#             'USER': 'postgres',
-#             'PASSWORD': 'postgres',
-#             'HOST': 'localhost',
+#             'NAME': AWS_RDS_DBNAME,
+#             'USER': AWS_RDS_USERNAME,
+#             'PASSWORD': AWS_RDS_PASSWORD,
+#             'HOST': AWS_RDS_ENDPOINT,
 #             'PORT': POSTGRESQL_ADDON_PORT,
 #             'CONN_MAX_AGE': 15, 
 #         }
 #     }
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.contrib.gis.db.backends.postgis', #''django.db.backends.postgresql_psycopg2',  #'django.db.backends.mysql',
+            'NAME': 'effi',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'localhost',
+            'PORT': POSTGRESQL_ADDON_PORT,
+            'CONN_MAX_AGE': 15, 
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
