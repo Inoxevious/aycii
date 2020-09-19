@@ -88,6 +88,21 @@ class NoticeBoard(models.Model):
     def __str__(self):
         return self.title
 
+class ExecutivesStatment(models.Model):
+    author = models.ForeignKey(Executive, on_delete = models.CASCADE)
+    image = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
+    video = models.FileField(upload_to="media/%Y/%m/%d",null=True, blank=True)
+    title = models.CharField(max_length=50,null=True ,blank=True)
+    summary =models.CharField(max_length=100,null=True ,blank=True)
+    paragraph =models.TextField(null=True ,blank=True)
+    isActive = models.BooleanField(default=True)
+    isHomeArticle = models.BooleanField(default=True)
+    written_date = models.DateTimeField()
+    published_date = models.DateTimeField()
+    expire_date = models.DateTimeField()
+    def __str__(self):
+        return self.title
+
 class Articles(models.Model):
     dep = models.ForeignKey(Department, on_delete = models.CASCADE)
     author = models.ForeignKey(AccountUser, on_delete = models.CASCADE)
@@ -104,5 +119,24 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
+class Events(models.Model):
+    dep = models.ForeignKey(Department, on_delete = models.CASCADE)
+    author = models.ForeignKey(AccountUser, on_delete = models.CASCADE)
+    image = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
+    video = models.FileField(upload_to="media/%Y/%m/%d",null=True, blank=True)
+    title =models.CharField(max_length=50,null=True ,blank=True)
+    statement = models.TextField(null=True ,blank=True)
+    event_link_zoom = models.TextField(null=True ,blank=True)
+    event_link_teams =models.TextField(null=True ,blank=True)
+    event_link_web =models.TextField(null=True ,blank=True)
+    location =models.TextField(null=True ,blank=True)
+    isActive = models.BooleanField(default=True)
+    isFaceBanner = models.BooleanField(default=True)
+    written_date = models.DateTimeField()
+    published_date = models.DateTimeField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    def __str__(self):
+        return self.title
 
 

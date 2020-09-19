@@ -83,7 +83,7 @@ def login(request):
             messages.error(request,"Invalid Credentials")
             return redirect('account:login')       
     else:
-        return render(request,'pages/login.html')
+        return render(request,'pages/ay/components/login/signin.html')
 
 def logout(request):
     if request.method == 'POST':
@@ -146,7 +146,7 @@ def register(request):
             'role_choices': role_choices,
            
         }
-        return render(request,'pages/register.html' , context)
+        return render(request,'pages/ay/components/login/register.html' , context)
 
 def account_activation_sent(request):
 

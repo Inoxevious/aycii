@@ -17,8 +17,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.files import File
 from django.http import HttpResponse, StreamingHttpResponse
 from django.utils.text import slugify
-
-
+# from account.models import *
+from . models import *
 def dept_detail(request,dept_id):
         totaldict = {}
         dept = Department.objects.get(id=dept_id)
@@ -64,6 +64,7 @@ class HomePageView(TemplateView):
 
 def index(request):
 
+    banners =  HomePageBanners.objects.all()
     global object_list, paged_object_list
     object_list = AccountUser.objects.all()
     print('objet found',object_list)
@@ -71,8 +72,9 @@ def index(request):
     paginator = Paginator(object_list,3)
     page = request.GET.get('page')
     paged_object_list = paginator.get_page(page)
- 
+    
     executive_dict = {}
+    exe_statement_dict = {}
     appointment_date_dict = {}
     dept_dict = {}
     dept_id_dict = {}
@@ -82,8 +84,11 @@ def index(request):
             try:
                     executive = Executive.objects.get(profile_id=a.id) 
                     print('active hot spot found ',Executive.id, ' ___', executive.role.name)
+                    # exc_text = ExecutivesStatment.objects.get(author_id=executive.id)
                     executive_dict[executive.id] = []
                     executive_dict[executive.id].append(str(executive.role.name))
+                    # exe_statement_dict[executive.id] = []
+                    # exe_statement_dict[executive.id].append(str(exc_text.summary))
                     appointment_date_dict[executive.id] = []
                     appointment_date_dict[executive.id].append(executive.appointment_date)
                     dept_id_dict[executive.id] = []
@@ -91,10 +96,16 @@ def index(request):
                     dept_dict[executive.id] = []
                     dept_dict[executive.id].append(str(executive.dep.name))
             except (TypeError, ValueError, OverflowError, Executive.DoesNotExist):
-                    dcost = 'Risk not added yet'       
+                    dcost = 'Risk not added yet' 
 
+    executive = Executive.objects.get(role=2)
+    print('pres iddddddd................', executive.id)
+    president = ExecutivesStatment.objects.get(author_id=executive.id)
+    print('pres stt111111.................', president.summary)
     notices  = NoticeBoard.objects.all()   
     articles  = Articles.objects.all() 
+    testimonials  = HomePageTestimonials.objects.all() 
+    events = Events.objects.all()
     depts = Department.objects.all()  
     context = { 'object_list': paged_object_list,
                 'executive_role_dict': executive_dict,
@@ -104,9 +115,14 @@ def index(request):
                 'notices': notices,
                 'articles': articles,
                 'depts': depts,
+                'banners': banners,
+                'president': president,
+                'testimonials':testimonials,
+                'exe_statement_dict':exe_statement_dict,
+                'events':events,
     
      }
-    return render(request, 'pages/home.html', context)
+    return render(request, 'pages/ay/index.html', context)
 
 def guide(request):
     depts = Department.objects.all()  
@@ -122,42 +138,59 @@ def contact(request):
                 'depts': depts,
     
      }
-    return render(request, 'pages/contact.html', context)
-
-
-def listing(request):
+    return render(request, 'pages/ay/components/contacts/contact.html', context)
+def research(request):
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
     
      }
-    return render(request, 'pages/listing.html', context)
-
-# def loginn(request):
-#     data = 'hie'
-#     context = {'data':data}
-
-#     return render(request, 'pages/login.html', context, context)
-
-def primary(request):
+    return render(request, 'pages/ay/components/research/research.html', context)
+def about(request):
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
     
      }
-
-    return render(request, 'pages/primary.html', context)
-
-def secondary(request):
+    return render(request, 'pages/ay/components/about_us/about.html', context)
+def business_portal(request):
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
     
      }
-
-    return render(request, 'pages/secondary.html', context)
-
+    return render(request, 'pages/ay/components/business_portal/portal.html', context)
+def departments(request):
+    depts = Department.objects.all()  
+    context = { 
+                'depts': depts,
     
+     }
+    return render(request, 'pages/ay/components/departments/departments.html', context)
+def events(request):
+    depts = Department.objects.all()  
+    context = { 
+                'depts': depts,
+    
+     }
+    return render(request, 'pages/ay/components/events/events.html', context)
+def executives(request):
+    depts = Department.objects.all()  
+    context = { 
+                'depts': depts,
+    
+     }
+    return render(request, 'pages/ay/components/executive/executives.html', context)
+
+def members_portal(request):
+    depts = Department.objects.all()  
+    context = { 
+                'depts': depts,
+    
+     }
+    return render(request, 'pages/ay/components/members_portal/members_portal.html', context)
+
+ 
 def faq(request):
     depts = Department.objects.all()  
     context = { 
