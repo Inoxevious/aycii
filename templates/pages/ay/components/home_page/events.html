@@ -1,0 +1,60 @@
+<!-- Events -->
+<div class="g-bg-secondary">
+    <div class="container g-py-100">
+        <!-- Heading -->
+        <div class="g-max-width-645 text-center g-mb-60 mx-auto">
+            <h2 class="h1 mb-3">More Ways to Know the YCi </h2>
+            <p>Be involved</p>
+        </div>
+        <!-- End Heading -->
+
+        <!-- More Events List -->
+        <ul class="list-unstyled g-mb-60">
+            {%  if events %}
+            {% for event in events %}
+            <!-- Events Item -->
+            <li
+                class="u-block-hover u-shadow-v37--hover g-bg-secondary-dark-v1 g-bg-white--hover rounded g-px-50 g-py-30 mb-4">
+                <div class="row align-items-lg-center">
+                    <div class="col-md-3 col-lg-2 g-mb-30 g-mb-0--lg">
+                        <div class="d-flex align-items-center mb-3">
+                            <span
+                                class="g-color-primary g-font-weight-500 g-font-size-50 g-line-height-1 mr-3">{{event.start_time|date:"d "}}</span>
+                            <div class="g-color-text-light-v1 text-center g-line-height-1_4">
+                                <span class="d-block">{{event.start_time|date:"M"}}
+                                    {{event.start_time|date:"Y"}}</span>
+                                <span class="d-block"></span>
+                            </div>
+                        </div>
+                        <span class="d-block g-color-text-light-v1">{{event.start_time|date:"g:a"}} -
+                            {{event.end_time|date:"g:a"}}</span>
+                    </div>
+                    <div class="col-md-9 col-lg-8 g-mb-30 g-mb-0--lg">
+                        <h3 class="h5 g-font-primary g-font-weight-500 mb-1">{{event.statement}}</h3>
+                        <p>{{event.author.user.first_name}} {{event.author.user.last_name}}, {{event.author.role}}</p>
+                        <a class="d-inline-block u-link-v5 g-color-text-light-v1 g-color-primary--hover" href="#">
+                            <i class="align-middle g-color-primary mr-2 icon-real-estate-027 u-line-icon-pro"></i>
+                            {{event.location}}
+                        </a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a class="btn btn-block g-brd-2 g-brd-main-opacity-0_1 g-brd-primary--hover g-color-primary g-color-white--hover g-bg-primary--hover g-rounded-30 g-py-10"
+                            href="{{event.event_link_zoom}}">Register now</a>
+                    </div>
+                </div>
+                <a class="u-link-v2" href="{{event.event_link_zoom}}"></a>
+            </li>
+            <!-- End Events Item -->
+            {% endfor %}
+            {% endif %}
+
+        </ul>
+        <!-- End More Events List -->
+
+        <div class="text-center">
+            <a class="btn u-shadow-v33 g-color-white g-color-white--hover g-bg-primary g-bg-main--hover g-rounded-30 g-px-25 g-py-10"
+                href="{% url 'pages:events'%}?next={{request.path}}">View all Events</a>
+        </div>
+    </div>
+</div>
+<!-- End Events -->

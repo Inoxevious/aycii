@@ -13,11 +13,14 @@ urlpatterns=[
     # url(r'^dept_detail/$', dept_detail, name='dept_detail'),
     # path('register/', register, name='register'),
     path('guide/', guide, name='guide'),
-    path('listing/', listing, name='listing'),
     path('contact/', contact, name='contact'),
-    path('listing/', listing, name='listing'),
-    path('primary/', primary, name='primary'),
-    path('secondary/', secondary, name='secondary'),
+    path('research/', research, name='research'),
+    path('about/', about, name='about'),
+    path('executives/', executives, name='executives'),
+    path('business_portal/', business_portal, name='business_portal'),
+    path('members_portal/', members_portal, name='members_portal'),
+    path('departments/', departments, name='departments'),
+    path('events/', events, name='events'),
     path('faq/', faq, name='faq'),
    
 ]

@@ -8,6 +8,8 @@ class CountryAdmin(admin.ModelAdmin):
     }
 # Register your models here.
 admin.site.register(AccountUser)
+admin.site.register(ExecutivesStatment)
+admin.site.register(Events)
 admin.site.register(Department)
 admin.site.register(Executive)
 admin.site.register(NoticeBoard)

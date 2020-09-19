@@ -1,0 +1,40 @@
+{% load static%}
+<!-- Carousel Slider -->
+<div class="js-carousel u-carousel-v5" data-infinite="true" data-autoplay="true" data-speed="8000"
+    data-pagi-classes="u-carousel-indicators-v34 g-absolute-centered--y g-left-auto g-right-30 g-right-100--md"
+    data-calc-target="#js-header">
+    {% if banners %}
+    {% for banner in banners %}
+    <!-- Carousel Slides -->
+    <div class="js-slide h-100 g-flex-centered g-bg-img-hero g-bg-cover g-bg-black-opacity-0_3--after"
+        style="background-image: url({{banner.image.url}});">
+        <div class="container">
+            <div class="g-max-width-600 g-pos-rel g-z-index-1">
+                <a class="d-block g-text-underline--none--hover" href="#">
+                    <span class="d-block g-color-white g-font-size-20--md mb-2">
+                        <span
+                            class="g-brd-bottom--dashed g-brd-2 g-brd-primary g-color-primary g-font-weight-700 g-pb-2">
+                            {{ banner.title}}</span>
+                    </span>
+                    <span
+                        class="d-block g-color-white g-font-secondary g-font-size-15 g-font-size-15--md g-line-height-1_4">
+                        {{banner.tag_text}}
+                    </span>
+                </a>
+            </div>
+
+            <!-- Go to Button -->
+            <a class="js-go-to d-flex align-items-center g-color-white g-pos-abs g-bottom-0 g-z-index-1 g-text-underline--none--hover g-pb-60"
+                href="#!" data-target="#content">
+                <span class="d-block u-go-to-v4 mr-3"></span>
+            </a>
+            <!-- End Go to Button -->
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- End Carousel Slides -->
+
+
+</div>
+<!-- End Carousel Slider -->

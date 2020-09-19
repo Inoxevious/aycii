@@ -1,0 +1,48 @@
+<!-- Testimonials -->
+<div class="g-bg-main-light-v2">
+    <div class="container g-pt-70 g-pb-20">
+        <div class="js-carousel" data-pagi-classes="u-carousel-indicators-v35--white g-pos-rel text-center">
+            <!-- Testimonials -->
+            {% if testimonials %}
+            {% for test in testimonials %}
+            <div class="js-slide">
+                <div class="row justify-content-lg-center g-mb-20">
+                    <div class="col-md-3 col-lg-2 g-mb-20">
+                        <img class="img-fluid u-shadow-v36 rounded-circle mx-auto" src="{{test.image.url}}"
+                            alt="Image Description">
+                    </div>
+
+                    <div class="col-md-9 col-lg-8 g-mb-20">
+                        <!-- Testimonials - Content -->
+                        <div class="media mb-3">
+                            <div class="d-flex mr-3">
+                                <span
+                                    class="g-color-white-opacity-0_8 g-font-secondary g-font-size-40 g-opacity-0_3 g-pos-rel g-top-minus-10">&#8220;</span>
+                            </div>
+                            <div class="media-body">
+                                <blockquote
+                                    class="g-brd-left-none g-color-white g-font-style-italic g-font-size-20 g-pl-0">
+                                    {{test.tag_text}}
+                                    <span
+                                        class="align-self-end g-color-white-opacity-0_8 g-font-secondary g-font-size-40 g-opacity-0_3 g-line-height-0 align-bottom g-pos-rel g-top-minus-10">&#8221;</span>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="g-pl-30">
+                            <h3 class="h4 g-color-white-opacity-0_9 mb-0">{{test.author.user.first_name}}</h3>
+                            <span class="d-block g-font-size-18 g-color-white-opacity-0_5 g-pl-20">&#8212;
+                                {{test.author.role}}
+                            </span>
+                        </div>
+                        <!-- End Testimonials - Content -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <!-- End Testimonials -->
+        </div>
+    </div>
+</div>
+<!-- End Testimonials -->
