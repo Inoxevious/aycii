@@ -24,65 +24,53 @@
                         <!-- Signin -->
                         <div id="signin">
                             <div class="u-shadow-v35 g-bg-white rounded g-px-40 g-py-50">
-                                <div class="g-mb-20">
-                                    <label class="g-color-text-light-v1 g-font-weight-500">Full name</label>
-                                    <div class="input-group">
-                                        <span
-                                            class="input-group-prepend g-width-50 g-brd-secondary-light-v2 g-bg-transparent g-rounded-right-0">
-                                            <div
-                                                class="input-group-text justify-content-center w-100 g-bg-secondary g-brd-secondary-light-v2">
-                                                <i class="icon-finance-067 u-line-icon-pro"></i>
-                                            </div>
-                                        </span>
-                                        <input
-                                            class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                                            type="text" placeholder="John Doe">
+                                {% include 'pages/partials/_alerts.html' %}
+                                <form class="g-mb-30" action="{% url 'account:login' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="g-mb-20">
+                                        <label class="g-color-text-light-v1 g-font-weight-500">Username</label>
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-prepend g-width-50 g-brd-secondary-light-v2 g-bg-transparent g-rounded-right-0">
+                                                <div
+                                                    class="input-group-text justify-content-center w-100 g-bg-secondary g-brd-secondary-light-v2">
+                                                    <i class="icon-finance-067 u-line-icon-pro"></i>
+                                                </div>
+                                            </span>
+                                            <input
+                                                class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
+                                                type="text" name="username" placeholder="Enter your username">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="g-mb-20">
-                                    <label class="g-color-text-light-v1 g-font-weight-500">Email</label>
-                                    <div class="input-group">
-                                        <span
-                                            class="input-group-prepend g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
-                                            <div
-                                                class="input-group-text justify-content-center w-100 g-bg-secondary g-brd-secondary-light-v2">
-                                                <i class="icon-education-166 u-line-icon-pro"></i>
-                                            </div>
-                                        </span>
-                                        <input
-                                            class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                                            type="email" placeholder="john@gmail.com">
+                                    <div class="g-mb-20">
+                                        <label class="g-color-text-light-v1 g-font-weight-500">Password</label>
+                                        <div class="input-group">
+                                            <span
+                                                class="input-group-prepend g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
+                                                <div
+                                                    class="input-group-text justify-content-center w-100 g-bg-secondary g-brd-secondary-light-v2">
+                                                    <i class="icon-finance-135 u-line-icon-pro"></i>
+                                                </div>
+                                            </span>
+                                            <input
+                                                class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
+                                                name="password" type="password" placeholder="Enter your password">
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="g-mb-20">
-                                    <label class="g-color-text-light-v1 g-font-weight-500">Password</label>
-                                    <div class="input-group">
-                                        <span
-                                            class="input-group-prepend g-width-50 g-brd-secondary-light-v2 g-bg-secondary g-rounded-right-0">
-                                            <div
-                                                class="input-group-text justify-content-center w-100 g-bg-secondary g-brd-secondary-light-v2">
-                                                <i class="icon-finance-135 u-line-icon-pro"></i>
-                                            </div>
-                                        </span>
-                                        <input
-                                            class="form-control g-brd-secondary-light-v2 g-bg-secondary g-bg-secondary-dark-v1--focus g-rounded-left-0 g-px-20 g-py-12"
-                                            type="password" placeholder="*********">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a class="g-color-text-light-v1 g-font-size-default" id="forgot-password-link"
+                                            href="#!">Forgot Password?</a>
+                                        <button type="submit"
+                                            class="btn u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-font-size-default rounded g-px-25 g-py-7">Signin</button>
                                     </div>
-                                </div>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <a class="g-color-text-light-v1 g-font-size-default" id="forgot-password-link"
-                                        href="#!">Forgot Password?</a>
-                                    <button type="submit"
-                                        class="btn u-shadow-v33 g-color-white g-bg-primary g-bg-main--hover g-font-size-default rounded g-px-25 g-py-7">Signin</button>
-                                </div>
+                                </form>
                             </div>
 
                             <div class="text-center g-pt-30">
                                 <p class="g-color-text-light-v1 g-font-size-default mb-0">Do not have an account? <a
-                                        class="g-font-size-default" id="signup-link" href="#!">Create Account</a></p>
+                                        class="g-font-size-default" id="signup-link" href="{% url 'account:register'%}?next={{request.path}">Create Account</a></p>
                             </div>
                         </div>
                         <!-- End Signin -->

@@ -1,4 +1,4 @@
-from .models import AccountUser
+from .models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect, get_object_or_404
@@ -25,37 +25,38 @@ from django.utils.datastructures import MultiValueDictKeyError
 @login_required(login_url='/pages/login/')
 def index(request, **kwargs):
         individual = "individual"
-        farm ="farm"
-        mine = "mine"
-        school = "school"
-        fleet = "fleet"
-        distributor = "distributor"
+        blogger ="blogger"
+        president = "president"
+        director = "director"
+        secretary = "secretary"
+        business = "business"
+        admin = 'admin'
         user_url = ''
 
         user_id = request.user.id
         account_user = AccountUser.objects.get(user_id=user_id)
  
 
-        if str(account_user.role) == farm:
-            user_url = 'farm' 
+        if str(account_user.role) == admin:
+            user_url = 'admin:index' 
 
         elif str(account_user.role) == individual:
             user_url = 'individual:individual'
                    
         elif str(account_user.role) == mine:
-            user_url = 'mine'
+            user_url = 'admin:index'
           
-        elif str(account_user.role) == school:
-            user_url = 'school'
+        elif str(account_user.role) == director:
+            user_url = 'admin:index'
         
         elif str(account_user.role) == processor:
-            user_url = 'processor'
+            user_url = 'admin:index'
 
-        elif str(account_user.role) == fleet:
-            user_url = 'fleet'
+        elif str(account_user.role) == secretary:
+            user_url = 'admin:index'
             
-        elif str(account_user.role) == distributor:
-            user_url = 'distributor'
+        elif str(account_user.role) == business:
+            user_url = 'admin:index'
     
         else:
             user_url = 'pages/login.html'
@@ -66,24 +67,25 @@ def index(request, **kwargs):
 
 
 def login(request):
-    if request.method == 'POST':
-       username = request.POST['username']
-       password = request.POST['password']
+    # if request.method == 'POST':
+    #    username = request.POST['username']
+    #    password = request.POST['password']
+    #    print("USERNAME,,,,",username,)
 
-       user = auth.authenticate(username = username,password = password)
+    #    user = auth.authenticate(username = username,password = password)
 
-       if user:
+    #    if user:
 
-           auth.login(request,user)
-           messages.success(request,"You are now logged in.")
-           return redirect('account:index')
+    #        auth.login(request,user)
+    #        messages.success(request,"You are now logged in.")
+    #        return redirect('admin')
 
           
-       else:
-            messages.error(request,"Invalid Credentials")
-            return redirect('account:login')       
-    else:
-        return render(request,'pages/ay/components/login/signin.html')
+    #    else:
+    #         messages.error(request,"Invalid Credentials")
+    #         return redirect('account:login')       
+    # else:
+    return redirect('account:login') 
 
 def logout(request):
     if request.method == 'POST':
@@ -92,7 +94,7 @@ def logout(request):
     return redirect('account:index')
 
 def register(request):
-    
+    role_choices = MembershipRole.objects.all()
     if request.method == "POST":
         
         # Get form values
@@ -104,6 +106,7 @@ def register(request):
         password2 = request.POST['password2']
         try:
             role = request.POST['role']
+            print("role found", role)
         except MultiValueDictKeyError:
             role = 'undefined'
 
@@ -114,39 +117,54 @@ def register(request):
             # Check username
             if User.objects.filter(username = username).exists():
                 messages.error(request,"That username is taken.")
-                return redirect('pages/register')
+                return redirect('account:register')
             else:
                 if User.objects.filter(email = email).exists():
                     messages.error(request,"That email is taken.")
-                    return redirect('pages/register')
+                    return redirect('account:register')
                 else:
                     # looks good
-                    
-                    user = User.objects.create_user(username = username,
-                    password = password,email=email,first_name = first_name,
-                    last_name = last_name )
-                    user.save()
+                    mrole =  MembershipRole.objects.get(id=role)
+                    print("ROLE Class", mrole.membership_class.name)
+                    if mrole.membership_class.name == 'executives':
+                        user = User.objects.create_user(username = username,
+                        password = password,email=email,first_name = first_name,
+                        last_name = last_name, is_staff = True )
+                        user.save()
 
-                    user = get_object_or_404(User, email = email)  
-                    acc = AccountUser(user_id = user.id, rmembership_role = role)          
-                    acc.save()
+                        user = get_object_or_404(User, email = email)  
+                        acc = AccountUser(user_id = user.id, rmembership_role = mrole )          
+                        acc.save()
+                        auth.login(request,user)
+                        messages.success(request,"You are now registered in.")
+                        return redirect('admin:login')
+                    else:
+                        user = User.objects.create_user(username = username,
+                        password = password,email=email,first_name = first_name,
+                        last_name = last_name )
+                        user.save()
+
+                        user = get_object_or_404(User, email = email)  
+                        acc = AccountUser(user_id = user.id, rmembership_role = mrole )          
+                        acc.save()
                     # Login after register
-                    auth.login(request,user)
-                    messages.success(request,"You are now registered in.")
-                    return redirect('account:login')
+                        auth.login(request,user)
+                        messages.success(request,"You are now registered in.")
+                        return redirect('pages:index')
 
                     # # Login manually 
                     # messages.success(request,"You can now log in.")
                     # return redirect('login')
         else:
             messages.error(request,'Passwords do not match.')
-            return redirect('pages/register')
+            return redirect('account:register')
     else:
+        role_choices = MembershipRole.objects.all()
         context = {
             'role_choices': role_choices,
            
         }
-        return render(request,'pages/ay/components/login/register.html' , context)
+        return render(request,'pages/ay/components/login/reg.html' , context)
 
 def account_activation_sent(request):
 

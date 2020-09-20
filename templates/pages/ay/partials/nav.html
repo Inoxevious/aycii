@@ -92,7 +92,7 @@
                                 <li class="py-2">
                                     <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
                                         href="{% url 'pages:departments'%}?next={{request.path}}">
-                                        Departments
+                                        Stores
                                         <i
                                             class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
                                     </a>
@@ -100,38 +100,7 @@
                                 <li class="py-2">
                                     <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
                                         href="{% url 'pages:about'%}?next={{request.path}}">
-                                        About
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="{% url 'pages:members_portal'%}?next={{request.path}}">
-                                        Members Portal
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End Links -->
-                        </div>
-
-                        <div class="col-sm-6 col-lg-3">
-                            <!-- Links -->
-                            <ul class="list-unstyled g-pr-30 mb-0">
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="{% url 'pages:executives'%}?next={{request.path}}">
-                                        Executive &amp; Staff
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="{% url 'pages:events'%}?next={{request.path}}">
-                                        Events
+                                        Services
                                         <i
                                             class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
                                     </a>
@@ -141,12 +110,14 @@
                             <!-- End Links -->
                         </div>
 
+
+
                         <div class="col-sm-6 col-lg-3">
                             <!-- Links -->
                             <ul class="list-unstyled g-pr-30 mb-0">
                                 <li class="py-2">
                                     <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-campus-life-1.html">
+                                        href="{% url 'pages:departments'%}?next={{request.path}}">
                                         Social Responsibilites
                                         <i
                                             class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
@@ -154,7 +125,7 @@
                                 </li>
                                 <li class="py-2">
                                     <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-research-1.html">
+                                        href="{% url 'pages:departments'%}?next={{request.path}}">
                                         Request Mentorship
                                         <i
                                             class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
@@ -162,7 +133,7 @@
                                 </li>
                                 <li class="py-2">
                                     <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-apply-1.html">
+                                        href="{% url 'pages:departments'%}?next={{request.path}}">
                                         Register Business
                                         <i
                                             class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
@@ -172,44 +143,7 @@
                             <!-- End Links -->
                         </div>
 
-                        <div class="col-sm-6 col-lg-3">
-                            <!-- Links -->
-                            <ul class="list-unstyled g-pr-30 mb-0">
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-contacts-1.html">
-                                        Contacts
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-help-1.html">
-                                        Help
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                                <li class="py-2">
-                                    <a class="d-flex g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5"
-                                        href="page-signin-1.html">
-                                        Signin
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                                <li class="py-2">
-                                    <a class="d-flex g-brd-top g-brd-primary g-color-main g-color-primary--hover g-text-underline--none--hover g-pt-15 g-pb-5"
-                                        href="../../index.html">
-                                        Main
-                                        <i
-                                            class="g-color-primary g-font-size-15 g-pos-rel g-top-5 ml-auto material-icons">arrow_forward</i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End Links -->
-                        </div>
+
                     </div>
                 </div>
                 <!-- End Mega Menu -->

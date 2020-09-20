@@ -1,0 +1,81 @@
+{% load static%}
+<!-- Video Blocks -->
+<div class="container text-center g-py-70">
+    <h3 class="h3 g-mb-40">Be motivated by our community members</h3>
+
+    <!-- Video Blocks -->
+    <div class="row g-mb-30">
+        {% for test in testimonials %}
+        {% if test.video %}
+        <div class="col-sm-6 col-lg-3 g-mb-30">
+            <!-- Fancybox Video -->
+            <div
+                class="u-shadow-v36 g-brd-around g-brd-4 g-brd-white g-brd-primary--hover rounded g-pos-rel g-transition-0_2">
+                <img class="img-fluid" src="{{test.video}}" alt="Image Description">
+                <a class="js-fancybox g-absolute-centered" href="javascript:;"
+                    data-src="//www.youtube.com/watch?v=FxiskmF16gU" data-speed="350" data-caption="Video">
+                    <span
+                        class="u-icon-v3 u-icon-size--lg g-color-white g-color-primary--hover g-bg-transparent g-font-size-30 g-rounded-50x g-cursor-pointer">
+                        <i class="g-pos-rel g-left-2 fa fa-play"></i>
+                    </span>
+                </a>
+            </div>
+            <!-- End Fancybox Video -->
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="col-sm-6 col-lg-3 g-mb-30">
+            <!-- Fancybox Video -->
+            <div
+                class="u-shadow-v36 g-brd-around g-brd-4 g-brd-white g-brd-primary--hover rounded g-pos-rel g-transition-0_2">
+                <img class="img-fluid"
+                    src="{% static 'unify/ay/assets/img/bg/youth-connekt-africa-summit-2019--kigali-9-october-2019_48871728943_o.jpg' %}"
+                    alt="Image Description">
+                <a class="js-fancybox g-absolute-centered" href="javascript:;"
+                    data-src="//www.youtube.com/watch?v=FxiskmF16gU" data-speed="350" data-caption="Video">
+                    <span
+                        class="u-icon-v3 u-icon-size--lg g-color-white g-color-primary--hover g-bg-transparent g-font-size-30 g-rounded-50x g-cursor-pointer">
+                        <i class="g-pos-rel g-left-2 fa fa-play"></i>
+                    </span>
+                </a>
+            </div>
+            <!-- End Fancybox Video -->
+        </div>
+        <div class="col-sm-6 col-lg-3 g-mb-30">
+            <!-- Fancybox Video -->
+            <div
+                class="u-shadow-v36 g-brd-around g-brd-4 g-brd-white g-brd-primary--hover rounded g-pos-rel g-transition-0_2">
+                <img class="img-fluid"
+                    src="{% static 'unify/ay/assets/img/bg/youth-connekt-africa-summit-2019--kigali-9-october-2019_48871728943_o.jpg' %}"
+                    alt="Image Description">
+                <a class="js-fancybox g-absolute-centered" href="javascript:;"
+                    data-src="//www.youtube.com/watch?v=FxiskmF16gU" data-speed="350" data-caption="Video">
+                    <span
+                        class="u-icon-v3 u-icon-size--lg g-color-white g-color-primary--hover g-bg-transparent g-font-size-30 g-rounded-50x g-cursor-pointer">
+                        <i class="g-pos-rel g-left-2 fa fa-play"></i>
+                    </span>
+                </a>
+            </div>
+            <!-- End Fancybox Video -->
+        </div>
+        <div class="col-sm-6 col-lg-3 g-mb-30">
+            <!-- Fancybox Video -->
+            <div
+                class="u-shadow-v36 g-brd-around g-brd-4 g-brd-white g-brd-primary--hover rounded g-pos-rel g-transition-0_2">
+                <img class="img-fluid"
+                    src="{% static 'unify/ay/assets/img/bg/youth-connekt-africa-summit-2019--kigali-9-october-2019_48871728943_o.jpg' %}"
+                    alt="Image Description">
+                <a class="js-fancybox g-absolute-centered" href="javascript:;"
+                    data-src="//www.youtube.com/watch?v=FxiskmF16gU" data-speed="350" data-caption="Video">
+                    <span
+                        class="u-icon-v3 u-icon-size--lg g-color-white g-color-primary--hover g-bg-transparent g-font-size-30 g-rounded-50x g-cursor-pointer">
+                        <i class="g-pos-rel g-left-2 fa fa-play"></i>
+                    </span>
+                </a>
+            </div>
+            <!-- End Fancybox Video -->
+        </div>
+    </div>
+    <!-- End Video Blocks -->
+</div>
+<!-- End Video Blocks -->
