@@ -22,7 +22,7 @@ class HomePageBanners(models.Model):
 class HomePageTestimonials(models.Model):
     author = models.ForeignKey(AccountUser, on_delete = models.CASCADE)
     image = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
-    video = models.FileField(upload_to="media/%Y/%m/%d",null=True, blank=True)
+    video_link = models.TextField(null=True ,blank=True)
     title =models.CharField(max_length=50,null=True ,blank=True)
     summary =models.CharField(max_length=100,null=True ,blank=True)
     tag_text =models.TextField(null=True ,blank=True)
