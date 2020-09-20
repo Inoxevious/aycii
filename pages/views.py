@@ -38,11 +38,11 @@ def notice_detail(request,notice_id):
 
 def article_detail(request,article_id):
         totaldict = {}
-        articles = Articles.objects.get(id=article_id)
+        article = Articles.objects.get(id=article_id)
         context = {
-                'articles': articles,
+                'article': article,
         }
-        return render(request, 'pages/partials/article_detail.html', context )
+        return render(request, 'pages/ay/components/research/detail.html', context )
 
 
 class HomePageView(TemplateView):
