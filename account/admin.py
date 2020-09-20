@@ -6,7 +6,6 @@ class CountryAdmin(admin.ModelAdmin):
     formfield_overrides = {
         PointField: {"widget": GooglePointFieldInlineWidget}
     }
-# Register your models here.
 admin.site.register(AccountUser)
 admin.site.register(ExecutivesStatment)
 admin.site.register(Events)

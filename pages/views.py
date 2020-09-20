@@ -33,7 +33,7 @@ def notice_detail(request,notice_id):
         context = {
                 'notice': notice,
         }
-        return render(request, 'pages/partials/detail.html', context )
+        return render(request, 'pages/ay/components/notices/detail.html', context )
 
 
 def article_detail(request,article_id):
@@ -104,7 +104,7 @@ def index(request):
     print('pres stt111111.................', president.summary)
     notices  = NoticeBoard.objects.all()   
     articles  = Articles.objects.all() 
-    testimonials  = HomePageTestimonials.objects.all() 
+    testimonials  = HomePageTestimonials.objects.all()
     events = Events.objects.all()
     depts = Department.objects.all()  
     context = { 'object_list': paged_object_list,
@@ -147,9 +147,13 @@ def research(request):
      }
     return render(request, 'pages/ay/components/research/research.html', context)
 def about(request):
+    testimonials  = HomePageTestimonials.objects.all()
+    notices  = NoticeBoard.objects.all()
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
+                'testimonials':testimonials,
+                'notices': notices,
     
      }
     return render(request, 'pages/ay/components/about_us/about.html', context)
@@ -157,36 +161,60 @@ def business_portal(request):
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
+                'testimonials':testimonials,
     
      }
     return render(request, 'pages/ay/components/business_portal/portal.html', context)
 def departments(request):
+    articles  = Articles.objects.all()
+    
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
+                'articles': articles,
     
      }
     return render(request, 'pages/ay/components/departments/departments.html', context)
 def events(request):
-    depts = Department.objects.all()  
+    depts = Department.objects.all() 
+    events = Events.objects.all() 
     context = { 
                 'depts': depts,
+                'events':events,
     
      }
     return render(request, 'pages/ay/components/events/events.html', context)
 def executives(request):
+    executive = Executive.objects.get(role=1)
+    print('pres iddddddd................', executive.id)
+    president = ExecutivesStatment.objects.get(author_id=executive.id)
+    testimonials  = HomePageTestimonials.objects.all()
+    executives = ExecutivesStatment.objects.all()
     depts = Department.objects.all()  
     context = { 
                 'depts': depts,
+                'president': president,
+                'executives':executives,
+                'testimonials':testimonials,
     
      }
     return render(request, 'pages/ay/components/executive/executives.html', context)
 
 def members_portal(request):
-    depts = Department.objects.all()  
+    testimonials  = HomePageTestimonials.objects.all()
+    notices  = NoticeBoard.objects.all()
+    executive = Executive.objects.get(role=1)
+    president = ExecutivesStatment.objects.get(author_id=executive.id)
+    articles  = Articles.objects.all()
+    depts = Department.objects.all()
+    executives = ExecutivesStatment.objects.all()  
     context = { 
                 'depts': depts,
-    
+                'testimonials':testimonials,
+                'notices': notices,
+                'executives':executives,
+                'president': president,
+                'articles': articles,
      }
     return render(request, 'pages/ay/components/members_portal/members_portal.html', context)
 

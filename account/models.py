@@ -82,7 +82,20 @@ class Executive(models.Model):
         return self.profile.user.username
 
 class NoticeBoard(models.Model):
+    presidential = 'presidential'
+    High = 'High'
+    Medium = 'Medium'
+    Low = "Low"
+    malingoDalingo = 'malingoDalingo'
+    PRIORITY_CHOICES = [
+        (presidential,'presidential'),
+        (High,'High'),
+        (Medium,'Medium'),
+        (Low,'Low'),
+        (malingoDalingo,'malingoDalingo'),
+    ]
     dep = models.ForeignKey(Department, on_delete = models.CASCADE)
+    priority = models.CharField(null=True ,blank=True,max_length=20, choices=PRIORITY_CHOICES, default = Low)
     image = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     video = models.FileField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     title =models.CharField(max_length=50,null=True ,blank=True)

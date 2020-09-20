@@ -18,36 +18,25 @@
         <div class="g-mb-20">
           <input
             class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-13 g-px-15"
-            name="username"
-            type="text"
-            placeholder="Email Address"
-          />
+            name="username" type="text" placeholder="Enter your username" />
         </div>
 
         <div class="g-mb-20">
           <input
             class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v3 g-brd-primary--hover rounded-0 g-py-13 g-px-15"
-            name="password"
-            type="password"
-            placeholder="Enter your Password"
-          />
+            name="password" type="password" placeholder="Enter your Password" />
         </div>
 
         <button
           class="btn btn-block u-btn-primary g-color-white g-bg-primary-dark-v1--hover g-font-weight-600 g-font-size-12 text-uppercase rounded-0 g-px-25 g-py-15"
-          type="submit"
-          type="submit"
-          value="Login"
-        >
+          type="submit" value="Login">
           Sign In
         </button>
       </form>
       <!-- End Login Form -->
 
       <div class="d-flex justify-content-between g-mb-10">
-        <a
-          class="d-block g-mb-10"
-          href="{% url 'account:register'%}?next={{request.path}"
+        <a class="d-block g-mb-10" href="{% url 'account:register'%}?next={{request.path}"
           >Create an account</a
         >
         <a class="d-block g-mb-10" href="page-forgot-password-1.html"

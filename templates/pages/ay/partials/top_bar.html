@@ -2,9 +2,10 @@
 <div class="g-bg-main">
     <div class="container g-py-5">
         <ul class="list-inline d-flex align-items-center g-mb-0">
-            <li class="list-inline-item d-none d-lg-inline-block">
-                <a class="u-link-v5 g-brd-around g-brd-white-opacity-0_2 g-color-white-opacity-0_7 g-color-white--hover g-font-size-12 g-rounded-20 text-uppercase g-px-20 g-py-10"
-                    href="{% url 'account:register'%}">Register</a>
+            <li class="list-inline-item  d-none d-lg-inline-block">
+                <a style="background-color: brown;"
+                    class="u-link-v5  g-brd-around  g-color-black g-color-black g-font-size-18 g-rounded-20 text-uppercase g-px-20 g-py-10"
+                    href="{% url 'account:register' %}">Register</a>
             </li>
 
             <!-- Language -->
@@ -124,7 +125,7 @@
                     </li>
                     <li class="dropdown-item g-px-0 g-py-2">
                         <a class="nav-link g-color-white g-bg-primary g-bg-primary-light-v1--hover g-font-size-default"
-                            href="{% url 'account:login' %}">Login</a>
+                            href="{% url 'admin:login' %}">Login</a>
                     </li>
                 </ul>
             </li>
@@ -134,7 +135,7 @@
 
             <li class="list-inline-item d-none d-lg-inline-block">
                 <a class="u-link-v5 g-color-white-opacity-0_7 g-color-white--hover g-font-size-12 text-uppercase g-px-10 g-py-15"
-                    href="{% url 'pages:research'%}?next={{request.path}}">Research</a>
+                    href="{% url 'pages:members_portal'%}?next={{request.path}}">Research</a>
             </li>
             <li class="list-inline-item d-none d-lg-inline-block">
                 <a class="u-link-v5 g-color-white-opacity-0_7 g-color-white--hover g-font-size-12 text-uppercase g-px-10 g-py-15"
@@ -146,7 +147,7 @@
             </li>
             <li class="list-inline-item d-none d-lg-inline-block">
                 <a class="u-link-v5 u-shadow-v19 g-color-white--hover g-bg-white g-bg-primary--hover g-font-size-12 text-uppercase g-rounded-20 g-px-18 g-py-8 g-ml-10"
-                    href="{% url 'account:login' %}">Sign in</a>
+                    href="{% url 'admin:login' %}">Sign in</a>
             </li>
             <!-- End Links -->
 
