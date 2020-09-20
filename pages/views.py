@@ -98,7 +98,7 @@ def index(request):
             except (TypeError, ValueError, OverflowError, Executive.DoesNotExist):
                     dcost = 'Risk not added yet' 
 
-    executive = Executive.objects.get(role=2)
+    executive = Executive.objects.get(role=1)
     print('pres iddddddd................', executive.id)
     president = ExecutivesStatment.objects.get(author_id=executive.id)
     print('pres stt111111.................', president.summary)
