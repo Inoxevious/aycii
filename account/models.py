@@ -9,16 +9,23 @@ class UserClass(models.Model):
     def __str__(self):
         return self.name
 
-    def __str__(self):
-        return self.name
-
 class Role(models.Model):
     name = models.CharField(max_length=70)
     user_group = models.ForeignKey(UserClass, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.name
+class MembershipClass(models.Model):
+    name = models.CharField(max_length=70)
+    def __str__(self):
+        return self.name
 
+class MembershipRole(models.Model):
+    membership_class = models.ForeignKey(MembershipClass, on_delete = models.CASCADE)
+    name = models.CharField(max_length=70)
+
+    def __str__(self):
+        return self.name
 class Country(models.Model): 
     name = models.CharField(max_length=200, default='zim')
     official_language = models.TextField(null=True ,blank=True)
@@ -28,10 +35,10 @@ class Country(models.Model):
     def __str__(self):
         return self.name
 
+
 # Create your models here.
 class AccountUser(models.Model):
-    role = models.CharField(null=True ,blank=True,max_length=70)
-    category = models.CharField(null=True ,blank=True,max_length=70)
+    rmembership_role = models.ForeignKey(MembershipRole, on_delete = models.CASCADE,null=True ,blank=True,)
     age = models.IntegerField(null=True ,blank=True)
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     email_confirmed = models.BooleanField(default=False)
@@ -68,7 +75,7 @@ class Department(models.Model):
 class Executive(models.Model):
     profile = models.OneToOneField(AccountUser, on_delete = models.CASCADE)
     dep = models.ForeignKey(Department, on_delete = models.CASCADE)
-    role = models.ForeignKey(Role, on_delete = models.CASCADE)
+    role = models.ForeignKey(MembershipRole, on_delete = models.CASCADE)
     appointment_date = models.DateTimeField()
     valid_till_date = models.DateTimeField()
     def __str__(self):

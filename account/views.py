@@ -128,7 +128,7 @@ def register(request):
                     user.save()
 
                     user = get_object_or_404(User, email = email)  
-                    acc = AccountUser(user_id = user.id, role = role)          
+                    acc = AccountUser(user_id = user.id, rmembership_role = role)          
                     acc.save()
                     # Login after register
                     auth.login(request,user)
@@ -166,7 +166,7 @@ def activate(request, uidb64, token):
                 user.is_active = True
                 user.accountuser.email_confirmed = True
                 user.accountuser.country = form.cleaned_data.get('country')
-                user.accountuser.role = form.cleaned_data.get('role')
+                user.accountuser.rmembership_role = form.cleaned_data.get('rmembership_role')
                 user.save()
                 login(request, user)
                 return render(request,'pages/home.html')
