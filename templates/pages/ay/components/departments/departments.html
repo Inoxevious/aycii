@@ -123,7 +123,7 @@
                         {% for article in articles %}
                         <li class="mb-1">
                             <a class="d-block u-link-v5 g-color-text g-color-white--hover g-bg-secondary g-bg-main--hover g-font-size-default rounded g-pl-30--hover g-px-20 g-py-7"
-                                href="#">
+                                href="{% url 'pages:article_detail' article.id %}">
                                 <i class="g-font-size-13 g-pos-rel g-top-2 mr-2 material-icons">arrow_forward</i>
                                 {{article.title}}
                             </a>

@@ -1,19 +1,19 @@
 <!-- News -->
 <div class="container g-pt-100">
-    <div class="g-px-30--lg">
-        <!-- Heading -->
-        <div class="g-max-width-645 text-center mx-auto g-mb-30">
-            <h2 class="h1 mb-3">Latest News &amp; Opinions</h2>
-            <p>Our duty towards you is to share our experience we're reaching in our work path with you.</p>
-        </div>
-        <!-- End Heading -->
+  <div class="g-px-30--lg">
+    <!-- Heading -->
+    <div class="g-max-width-645 text-center mx-auto g-mb-30">
+      <h2 class="h1 mb-3">Latest News &amp; Opinions</h2>
+      <p>Our duty towards you is to share our experience we're reaching in our work path with you.</p>
+    </div>
+    <!-- End Heading -->
 
-        <!-- News Carousel -->
-        <div class="js-carousel u-carousel-v5 g-mx-minus-15" data-slides-show="3" data-slides-scroll="1"
-            data-arrows-classes="u-icon-v3 u-icon-size--sm g-absolute-centered--y g-color-primary g-color-white--hover g-bg-primary-opacity-0_1 g-bg-primary--hover rounded-circle g-pa-11"
-            data-arrow-left-classes="fa fa-angle-left g-left-0 g-ml-minus-50--lg"
-            data-arrow-right-classes="fa fa-angle-right g-right-0 g-mr-minus-50--lg"
-            data-pagi-classes="u-carousel-indicators-v35 g-pos-rel text-center g-mt-30" data-responsive='[{
+    <!-- News Carousel -->
+    <div class="js-carousel u-carousel-v5 g-mx-minus-15" data-slides-show="3" data-slides-scroll="1"
+      data-arrows-classes="u-icon-v3 u-icon-size--sm g-absolute-centered--y g-color-primary g-color-white--hover g-bg-primary-opacity-0_1 g-bg-primary--hover rounded-circle g-pa-11"
+      data-arrow-left-classes="fa fa-angle-left g-left-0 g-ml-minus-50--lg"
+      data-arrow-right-classes="fa fa-angle-right g-right-0 g-mr-minus-50--lg"
+      data-pagi-classes="u-carousel-indicators-v35 g-pos-rel text-center g-mt-30" data-responsive='[{
                "breakpoint": 992,
                "settings": {
                  "slidesToShow": 2
@@ -29,30 +29,30 @@
                  "slidesToShow": 1
                }
              }]'>
-            {% if articles %}
-            {% for article in articles %}
-            <!-- News -->
-            <div class="js-slide u-shadow-v38 g-bg-size-cover g-bg-pos-center rounded g-mx-15 g-my-30"
-                style="background-image: url({{article.image.url}});">
-                <article class="align-self-end text-center g-pos-rel g-z-index-1 g-pa-40 mx-auto">
-                    <h3 class="g-color-white"> {{article.title}} </h3>
-                    <div class="mt-4">
-                        <span class="d-block g-color-white g-font-size-16 mb-2">{{article.author.user.first_name}}
-                            {{article.author.user.last_name}}</span>
-                        <div class="d-inline-block g-width-40 g-height-40">
-                            <img class="img-fluid g-brd-around g-brd-2 g-brd-primary-opacity-0_1 rounded-circle"
-                                src="{{article.author.profile_pic.url}}" alt="Image Description">
-                        </div>
-                    </div>
-                    <a class="u-link-v2" href="page-blog-single-item-1.html"></a>
-                </article>
+      {% if articles %}
+      {% for article in articles %}
+      <!-- News -->
+      <div class="js-slide u-shadow-v38 g-bg-size-cover g-bg-pos-center rounded g-mx-15 g-my-30"
+        style="background-image: url({{article.image.url}});">
+        <article class="align-self-end text-center g-pos-rel g-z-index-1 g-pa-40 mx-auto">
+          <h3 class="g-color-white"> {{article.title}} </h3>
+          <div class="mt-4">
+            <span class="d-block g-color-white g-font-size-16 mb-2">{{article.author.user.first_name}}
+              {{article.author.user.last_name}}</span>
+            <div class="d-inline-block g-width-40 g-height-40">
+              <img class="img-fluid g-brd-around g-brd-2 g-brd-primary-opacity-0_1 rounded-circle"
+                src="{{article.author.profile_pic.url}}" alt="Image Description">
             </div>
-            <!-- End News -->
-            {% endfor %}
-            {% endif %}
+          </div>
+          <a class="u-link-v2" href="{% url 'pages:article_detail' article.id %}"></a>
+        </article>
+      </div>
+      <!-- End News -->
+      {% endfor %}
+      {% endif %}
 
-        </div>
-        <!-- End News Carousel -->
     </div>
+    <!-- End News Carousel -->
+  </div>
 </div>
 <!-- End News -->
