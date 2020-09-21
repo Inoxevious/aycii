@@ -71,20 +71,7 @@
                             English
                         </a>
                     </li>
-                    <li class="dropdown-item g-px-0 g-py-2">
-                        <a class="nav-link d-flex align-items-center g-color-main g-color-primary--hover g-bg-secondary-dark-v2--hover g-font-size-default"
-                            href="#">
-                            <svg class="mr-1 g-ml-minus-10" xmlns="http://www.w3.org/2000/svg" height="11" width="27"
-                                viewBox="0 0 640 480">
-                                <g fill-rule="evenodd" stroke-width="1pt">
-                                    <path fill="#fff" d="M0 0h640v480H0z" />
-                                    <path fill="#0039a6" d="M0 160.003h640V480H0z" />
-                                    <path fill="#d52b1e" d="M0 319.997h640V480H0z" />
-                                </g>
-                            </svg>
-                            Russian
-                        </a>
-                    </li>
+
                 </ul>
             </li>
             <!-- End Language -->
@@ -92,7 +79,7 @@
             <!-- Jump To -->
             <li class="list-inline-item g-pos-rel">
                 <a id="jump-to-dropdown-invoker"
-                    class="d-block d-lg-none u-link-v5 g-color-white-opacity-0_7 g-color-white--hover g-font-size-12 text-uppercase g-py-7"
+                    class="d-block d-lg-none u-link-v5 g-color-white-opacity-0_7 g-color-white--hover g-font-size-20 text-uppercase g-py-7"
                     href="#" aria-controls="jump-to-dropdown" aria-haspopup="true" aria-expanded="false"
                     data-dropdown-event="hover" data-dropdown-target="#jump-to-dropdown"
                     data-dropdown-type="css-animation" data-dropdown-duration="0" data-dropdown-hide-on-scroll="true"
@@ -105,15 +92,11 @@
                     aria-labelledby="jump-to-dropdown-invoker">
                     <li class="dropdown-item g-brd-bottom g-brd-2 g-brd-white g-px-0 g-py-2">
                         <a class="nav-link g-color-main g-color-primary--hover g-bg-secondary-dark-v2--hover g-font-size-default"
-                            href="{% url 'account:register'%}">Apply Now</a>
+                            href="{% url 'account:register'%}">Register</a>
                     </li>
                     <li class="dropdown-item g-brd-bottom g-brd-2 g-brd-white g-px-0 g-py-2">
                         <a class="nav-link g-color-main g-color-primary--hover g-bg-secondary-dark-v2--hover g-font-size-default"
-                            href="{% url 'pages:contact'%}?next={{request.path}}">Campus Life</a>
-                    </li>
-                    <li class="dropdown-item g-brd-bottom g-brd-2 g-brd-white g-px-0 g-py-2">
-                        <a class="nav-link g-color-main g-color-primary--hover g-bg-secondary-dark-v2--hover g-font-size-default"
-                            href="{% url 'pages:contact'%}?next={{request.path}}">Research</a>
+                            href="{% url 'pages:members_portal'%}?next={{request.path}}">Research</a>
                     </li>
                     <li class="dropdown-item g-brd-bottom g-brd-2 g-brd-white g-px-0 g-py-2">
                         <a class="nav-link g-color-main g-color-primary--hover g-bg-secondary-dark-v2--hover g-font-size-default"
