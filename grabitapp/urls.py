@@ -28,6 +28,7 @@ urlpatterns = [
     path('', index, name='index'),
     path('pages/', include('pages.urls')),
     path('account/', include('account.urls')),
+    path('chatbot/', include('chatbot.urls')),
     path('individual/', include('individual.urls')),
     path('mush_store/', include('mush_store.urls')),
     path('search/', include('search.urls')),

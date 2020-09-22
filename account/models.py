@@ -53,7 +53,7 @@ class AccountUser(models.Model):
     total_worth =models.IntegerField(null=True ,blank=True)
     profile_pic = models.ImageField(upload_to="media/%Y/%m/%d",null=True, blank=True)
     bio = models.TextField(null=True ,blank=True)
-    country =  models.ForeignKey(Country, on_delete = models.CASCADE,null=True ,blank=True)
+    country =  models.TextField(null=True ,blank=True)
     
 
     def __str__(self):
@@ -76,8 +76,8 @@ class Executive(models.Model):
     profile = models.OneToOneField(AccountUser, on_delete = models.CASCADE)
     dep = models.ForeignKey(Department, on_delete = models.CASCADE)
     role = models.ForeignKey(MembershipRole, on_delete = models.CASCADE)
-    appointment_date = models.DateTimeField()
-    valid_till_date = models.DateTimeField()
+    appointment_date = models.DateTimeField(auto_now_add=True, blank=True)
+    valid_till_date = models.DateTimeField(auto_now_add=True, blank=True)
     def __str__(self):
         return self.profile.user.username
 
