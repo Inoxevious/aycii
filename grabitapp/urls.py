@@ -29,6 +29,7 @@ urlpatterns = [
     path('pages/', include('pages.urls')),
     path('account/', include('account.urls')),
     path('chatbot/', include('chatbot.urls')),
+    # path('products/', include('products.urls')),
     path('individual/', include('individual.urls')),
     path('mush_store/', include('mush_store.urls')),
     path('search/', include('search.urls')),

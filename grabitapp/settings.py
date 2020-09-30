@@ -43,7 +43,7 @@ SECRET_KEY = ')c^@^^mf^uc5&8!$zdvf2dlw!@-e52&wnuk^2o@&+2e*xx#8rj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['greats.pythonanywhere.com','127.0.0.1', '104.243.37.216','7071062f3df9.ngrok.io']
+ALLOWED_HOSTS = ['africayouthscommunity.org','127.0.0.1', '104.243.37.216']
 
 
 # Application definition
@@ -51,8 +51,9 @@ ALLOWED_HOSTS = ['greats.pythonanywhere.com','127.0.0.1', '104.243.37.216','7071
 INSTALLED_APPS = [
     'account',
     'chatbot',
+    'products',
     'easy_maps',
-    'mush_store',
+    # 'mush_store',
     'pages',
     'cart',
     'jet',
