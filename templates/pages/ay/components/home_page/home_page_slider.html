@@ -8,10 +8,17 @@
     <!-- Carousel Slides -->
     <div class="js-slide h-100 g-flex-centered g-bg-img-hero g-bg-cover g-bg-black-opacity-0_3--after"
         style="background-image: url({{banner.image.url}});">
-        <div class="container">
+   
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- End Carousel Slides -->
+    {% if banners %}
+    {% for banner in banners %}
+     <div class="container">
             <div class="g-max-width-600 g-pos-rel g-z-index-1">
                 <a class="d-block g-text-underline--none--hover" href="#">
-                    <span class="d-block g-color-white g-font-size-20--md mb-2">
+                    <span class="d-block g-color-black g-font-size-20--md mb-2">
                         <span
                             class="g-brd-bottom--dashed g-brd-2 g-brd-primary g-font-size-{{ banner.title_font_size }}  g-color-white g-font-weight-900 text-uppercase g-pb-2">
                             {{ banner.title}}</span>
@@ -23,18 +30,8 @@
                 </a>
             </div>
 
-            <!-- Go to Button -->
-            <a class="js-go-to d-flex align-items-center g-color-white g-pos-abs g-bottom-0 g-z-index-1 g-text-underline--none--hover g-pb-60"
-                href="#!" data-target="#content">
-                <span class="d-block u-go-to-v4 mr-3"></span>
-            </a>
-            <!-- End Go to Button -->
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
     {% endif %}
-    <!-- End Carousel Slides -->
-
-
 </div>
 <!-- End Carousel Slider -->
