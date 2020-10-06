@@ -13,7 +13,7 @@ class="container">
         <h2 class="h1 mb-3">About Us</h2>
         <p>The Africa Youths Community International [AYCi] is a global community of youths of African descent with an estimated membership strength of over seven hundred thousand [700,000] young 
            ...</p>
-        <a class="g-pl-30" href="{% url 'pages:about'%}?next={{request.path}}"">&#8212; Read more</a>
+        <a class="g-pl-30" href="{% url 'pages:about'%}?next={{request.path}}">&#8212; Read more</a>
     </div>
     <!-- End Heading -->
 
@@ -39,7 +39,7 @@ class="container">
                                 championing youth inclusion and increased cooperation and integration of African states.
                             </p>
                         </div>
-                        <a class="u-link-v2" href="page-future-students-1.html"></a>
+                        <a class="u-link-v2" href="{% url 'pages:about'%}?next={{request.path}}"></a>
                     </div>
                 </li>
                 <!-- End Links -->
@@ -61,7 +61,7 @@ class="container">
                                 championing youth inclusion and increased cooperation and integration of African states.
                             </p>
                         </div>
-                        <a class="u-link-v2" href="page-programs-1.html"></a>
+                        <a class="u-link-v2" href="{% url 'pages:about'%}?next={{request.path}}"></a>
                     </div>
                 </li>
                 <!-- End Links -->
@@ -83,7 +83,7 @@ class="container">
                                 championing citizen inclusion and increased cooperation and integration of African
                                 states.</p>
                         </div>
-                        <a class="u-link-v2" href="page-events-1.html"></a>
+                        <a class="u-link-v2" href="{% url 'pages:about'%}?next={{request.path}}"></a>
                     </div>
                 </li>
                 <!-- End Links -->
@@ -104,7 +104,7 @@ class="container">
                                 championing youth inclusion and increased cooperation and integration of African states.
                             </p>
                         </div>
-                        <a class="u-link-v2" href="page-campus-life-1.html"></a>
+                        <a class="u-link-v2" href="{% url 'pages:about'%}?next={{request.path}}"></a>
                     </div>
                 </li>
                 <!-- End Links -->
