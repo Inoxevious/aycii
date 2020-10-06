@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'easy_maps',
     # 'mush_store',
     'pages',
-    'cart',
     'jet',
     'vote',
     'mapwidgets',
