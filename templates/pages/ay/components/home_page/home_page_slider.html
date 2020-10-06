@@ -21,22 +21,14 @@
     data-calc-target="#js-header">
     {% if banners %}
     {% for banner in banners %}
-     <div style="padding-left:300px;" class="container">
-            <div class="g-max-width-600 g-pos-rel g-z-index-1">
-                <a class="d-block g-text-underline--none--hover" href="#">
-                    <span class="d-block g-color-black g-font-size-20--md mb-2">
-                        <span style="padding-left: -100px;" 
-                            class="g-max-width-645 text-center mx-auto g-brd-2  g-font-size-{{ banner.title_font_size }}  g-color-black g-font-weight-900  g-pb-2">
-                            <h2 class="h1 mb-3">{{ banner.title}}</h2></span>
-                    </span>
-                    <span style="background-color:green"
-                        class="d-block g-max-width-645 text-center mx-auto g-color-black g-font-secondary g-font-size-{{ banner.tag_text_font_size }} g-font-size-15--md g-line-height-1_4">
-                        {{banner.tag_text}}
-                    </span>
-                </a>
-            </div>
-
-        </div>
+    <div class="container">
+    <!-- Heading -->
+    <div class="g-max-width-645 text-center mx-auto">
+        <h2 class="h1 mb-3 g-font-size-{{ banner.title_font_size }}">{{ banner.title}}</h2>
+        <p>{{banner.tag_text}}</p>
+    </div>
+    </div>
+     
         {% endfor %}
     {% endif %}
 </div>
